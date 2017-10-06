@@ -1,0 +1,1 @@
+tshark -n -r <filename> -Y 'ssl.handshake.certificate' -T fields -E separator=\| -E aggregator=\| -e x509ce.dNSName -e x509sat.teletexString -e x509sat.uTF8String -e x509sat.universalString -e x509sat.IA5String | tr -s \| '\n' | sort | uniq -c | sort -nr
