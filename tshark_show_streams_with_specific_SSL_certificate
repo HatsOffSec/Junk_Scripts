@@ -1,0 +1,2 @@
+# <cert-name> identified with tshark_list_SSL_subject_values script
+tshark -n -r <file> -Y 'x509ce.dNSName==<cert-name> or x509sat.teletexString==<cert-name> or x509sat.uTF8String==<cert-name> or x509sat.universalString==<cert-name> or x509sat.IA5String==<cert-name>' -T fields -e tcp.stream
