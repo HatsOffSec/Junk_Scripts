@@ -1,0 +1,1 @@
+tshark -n -r <input_pcap> -Y 'tcp.stream==<stream_number>' -w <output_pcap>
