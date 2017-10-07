@@ -1,3 +1,4 @@
 #Useful with -Y flag (e.g. -Y 'http.cookie contains "utm"')
+# Bash command
 
 tshark -n -C no_desegment_tcp -r <pcap file> -T fields -E separator=/t -e http.host | sort | uniq -c | sort -nr
