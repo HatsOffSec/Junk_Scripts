@@ -1,0 +1,1 @@
+tshark -r <input file> -R http.request -T fields -e expert
