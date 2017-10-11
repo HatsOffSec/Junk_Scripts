@@ -1,0 +1,2 @@
+#list of all failed logons by username
+cat auth.log | grep 'Failed password' | grep -v 'repeated' | awk -F"for" '{print $2}' | awk -F"from" '{print $1}' | sed 's/invalid user //g' | sort | uniq -c | sort -nr
