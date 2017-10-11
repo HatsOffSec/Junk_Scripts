@@ -1,0 +1,3 @@
+#This will show failed and successful connections to the root account
+
+cat auth.log | grep 'root from' | grep -v repeated | grep -v maximum | awk -F"from" '{print $2}' | awk -F"port" '{print $1}' | sort | uniq -c | sort -nr
