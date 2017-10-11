@@ -1,0 +1,3 @@
+#Show all failed logons in auth.log by count, username,IP
+
+cat auth.log | grep 'Failed password' | grep -v 'repeated' | sed 's/invalid user //g' | awk -F'[ ]' '{print $9,$11}' | sort | uniq -c | sort -nr
