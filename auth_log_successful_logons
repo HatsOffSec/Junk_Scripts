@@ -1,0 +1,1 @@
+cat auth.log | grep 'session opened' | grep -v cron
