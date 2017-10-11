@@ -1,0 +1,28 @@
+##Powershell##
+##Script 'branched' from technet##
+
+$file = "c:\temp\output_sh.html"
+
+#Retrieve the previous content to allow latest to be added to top of file
+# $previous = Get-Content $file
+
+# |%{"$_<br/>"} is used to ensure each line of the output is on a new line
+
+$netsh = netsh wlan show network mode=bssid |%{"$_<br/>"}
+$date = Get-Date
+$body=@"
+<html>
+    <head>
+    <title>Network Report</title>
+    </head>
+<body>
+    <h1>NetSH Show Network BSSID</h1>
+    <pre>$date</pre>
+    <pre>$netsh</pre>
+    </body>
+</html>
+"@
+# Appends to existing file
+$body | Out-File -Append $file
+# Opens the file to screen
+. $file
