@@ -1,3 +1,3 @@
 #This will show all connections by IP regardless of username
-cat auth.log | grep 'Failed password' | grep -v 'repeated' | awk -F"from" '{print $2}' | awk -F"port" '{print $1}' | sort | uniq -c | sort -nr
+cat /var/log/auth.log | grep 'Failed password' | grep -v 'repeated' | awk -F"from" '{print $2}' | awk -F"port" '{print $1}' | sort | uniq -c | sort -nr
 
