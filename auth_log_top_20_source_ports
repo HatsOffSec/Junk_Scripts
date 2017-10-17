@@ -1,3 +1,3 @@
 # top 20 re-occurring source ports from auth.log
 
-cat auth.log | grep 'Failed password' | grep -v 'repeated' | awk -F'port' '{print $2}' | awk -F' ' '{print $1}' | grep -v from | sort | uniq -c | sort -nr | head -20
+cat /var/log/auth.log | grep 'Failed password' | grep -v 'repeated' | awk -F'port' '{print $2}' | awk -F' ' '{print $1}' | grep -v from | sort | uniq -c | sort -nr | head -20
