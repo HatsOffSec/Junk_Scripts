@@ -1,0 +1,1 @@
+cat /var/log/apache2/access.{log,log.1} | grep "200 " cat access.{log,log.1} | grep "200 "
