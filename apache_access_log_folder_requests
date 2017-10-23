@@ -1,7 +1,4 @@
-#This version of the script is based on an IP as the URL, it uses ':80' as the first point to cut from in AWK 
-#A new version will be released once the domain name has been added
+# See all requests regardless of method and including response codde
+# Does not look at gz archive
 
-#The * after access.log will parse all access.log files in the directory
-#This will attempt to parse GZ files, be mindful of this when checking results
-
-cat /var/log/apache2/access.log* | awk -F":80" '{print $2}' |  awk -F" " '{print $1}' | sort | uniq -c | sort -nr
+ cat access.{log,log.1} | awk -F" " '{print $6, $7, $9}' | awk -F '"' '{print $2}' | sort | uniq -c | sort -nr     
