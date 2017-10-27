@@ -1,1 +1,1 @@
-cat /var/log/apache2/access.{log,log.1} | awk -F" " '{print $1}' | awk -F '"' '{print $1}' | sort | uniq -c | sort -nr
+cat /var/log/apache2/access.{log,log.1} | awk -F" - " '{print $1}' | sort | uniq -c | sort -nr
