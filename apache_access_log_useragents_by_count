@@ -1,3 +1,6 @@
 #This shows results from log and log.1, but not archived logs
 
-cat /var/log/apache2/access.{log,log.1} | awk -F'"-"' '{print $2}' | awk -F'"' '{print $2}' | awk 'NF > 0' | sort | uniq -c | sort -nr
+#Script updated from http://www.the-art-of-web.com/system/logs/
+#Now correctly shows UA of '-' and blank UA
+
+awk -F\" '{print $6}' access.{log,log.1}   | sed 's/(\([^;]\+; [^;]\+\)[^)]*)/(\1)/'   | sort | uniq -c | sort -nr
