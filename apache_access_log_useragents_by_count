@@ -1,5 +1,3 @@
 #This shows results from log and log.1, but not archived logs
 
-#Now correctly shows UA of '-' and blank UA
-
-cat /var/log/apache2/access.{log,log.1} | awk -F\" '{print $6}'| sort | uniq -c | sort -nr
+zcat /var/log/apache2/access* | awk -F\" '{print $6}'| sort | uniq -c | sort -nr
