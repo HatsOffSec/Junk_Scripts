@@ -2,4 +2,4 @@
 
 #Needs tweaking, currently cannot correctly parse 'invalid user'
 
-cat /var/log/auth.{log,log.1} | grep 'Failed password' | grep -v 'repeated' | sed 's/invalid user //g' | awk -F'[ ]' '{print $9,$11}' | sort | uniq -c | sort -nr
+zcat -f /var/log/auth.{log,log.1} | grep 'Failed password' | grep -v 'repeated' | sed 's/invalid user //g' | awk -F'[ ]' '{print $9,$11}' | sort | uniq -c | sort -nr
