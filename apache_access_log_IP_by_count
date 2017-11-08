@@ -1,1 +1,1 @@
-zcat /var/log/apache2/access* | awk -F" - " '{print $1}' | sort | uniq -c | sort -nr
+zcat -f /var/log/apache2/access* | awk -F" - " '{print $1}' | sort | uniq -c | sort -nr
