@@ -1,1 +1,1 @@
-zcat /var/log/apache2/access* | grep "200 " | grep -v '/ '
+zcat -f /var/log/apache2/access* | grep "200 " | grep -v '/ '
