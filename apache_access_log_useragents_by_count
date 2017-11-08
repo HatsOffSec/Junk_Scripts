@@ -1,3 +1,3 @@
 #This shows results from log and log.1, but not archived logs
 
-zcat /var/log/apache2/access* | awk -F\" '{print $6}'| sort | uniq -c | sort -nr
+zcat -f /var/log/apache2/access* | awk -F\" '{print $6}'| sort | uniq -c | sort -nr
