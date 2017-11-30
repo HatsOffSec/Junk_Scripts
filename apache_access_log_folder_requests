@@ -1,3 +1,3 @@
 # See all requests regardless of method and including response codde
 
- zcat -f access* | awk -F" " '{print $6, $7, $9}' | awk -F '"' '{print $2}' | sort | uniq -c | sort -nr     
+ zcat -f /var/log/apache2/access* | awk -F" " '{print $6, $7, $9}' | awk -F '"' '{print $2}' | sort | uniq -c | sort -nr     
