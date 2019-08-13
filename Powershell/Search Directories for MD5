@@ -1,0 +1,1 @@
+Get-ChildItem -Recurse | Get-FileHash -Algorithm md5 | Select-String <hash>
