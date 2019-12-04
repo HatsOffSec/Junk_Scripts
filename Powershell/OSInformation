@@ -1,0 +1,2 @@
+Get-ComputerInfo -Property "Win*", "Time*"
+#Show basic OS information (based on W10 results)
