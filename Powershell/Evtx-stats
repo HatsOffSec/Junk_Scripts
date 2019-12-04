@@ -1,0 +1,2 @@
+Get-EventLog -LogName System -EntryType Error | Group-Object Source | Sort-Object -Property count -Descending
+#Looks at the System log and summarises all 'Error' level logs by Source. Then Powershell version of sort | uniq -c | sort -nr
